@@ -1,6 +1,6 @@
-# rodocentcs.github.io
-## CS 499 Capstone ePortfolio
+### CS 499 Capstone ePortfolio
 ## Southern New Hampshire University
+# rodocentcs.github.io
 
 ## Code Review
 
