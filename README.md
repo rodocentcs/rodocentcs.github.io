@@ -71,4 +71,20 @@ Going through this process I got a much better feel for the difference between f
 
 ---
 
+## Additional Project: Network Security
+
+### Network Vulnerability Assessment (IT 320: Network Security)
+
+[Full Report PDF](https://rodocentcs.github.io/IT%20320_%207-1%20FINAL%20PROJECT%20-%20CENTENO.pdf)
+
+#### Narrative
+
+This project was a full network security assessment completed for IT 320: Network Security in the spring of 2026. Working within a simulated enterprise environment, I used Nmap and Zenmap to identify eleven unnecessary inbound services exposed on a pfSense firewall, then used OpenVAS and Metasploit to determine which underlying vulnerabilities could actually be exploited. Wireshark and NetworkMiner were used to analyze captured network traffic, which confirmed that login credentials and file transfers were being sent in cleartext across multiple services.
+
+Beyond the firewall, the assessment identified an internal Windows Server that was missing a critical patch for a publicly known SMBv2 vulnerability and had no antivirus or endpoint protection installed. A backdoor file placed on the server during testing had gone completely undetected until endpoint protection was deployed and a scan was run. A separate host was also found running a database service with unchanged default credentials, which was successfully exploited to gain a foothold on the machine.
+
+I selected this project because it moved beyond identifying problems and into actually fixing them. I hardened the pfSense firewall by removing all unnecessary NAT forwarding rules and restricting inbound access to only HTTPS, RDP, and SSH, disabled the unnecessary services running on the Windows Server, and deployed antivirus software that detected and quarantined the backdoor. Every remediation was verified through follow-up scans confirming the exposure had actually been closed, not just addressed on paper. The project also required prioritizing four separate vulnerabilities by risk and likelihood and building a clear rationale for why the firewall exposure and social engineering risk needed to be addressed before the server-level issues, which sharpened how I think about triaging real security problems rather than fixing whatever is easiest first.
+
+---
+
 *Rodolfo Centeno II | CS 499 Capstone | Southern New Hampshire University*
